@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v3
       - run: ssh ${SERVER_USER}@${SERVER_HOST} ls
         env:
-          SERVER_USER : ${{ SERVERUSER }}
-          SERVER_HOST : ${{ SERVER_HOST }}
+          SERVER_USER : ${{ secrets.SERVERUSER }}
+          SERVER_HOST : ${{ secrets.SERVER_HOST }}
       - run: ls
