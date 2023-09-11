@@ -13,6 +13,7 @@ jobs:
           key: ${{ secrets.KEY }}
           known_hosts: ${{ secrets.KNOW_HOST }}
       - uses: actions/checkout@v3
+      - run: echo ${{secrets.KEY}}
       - run: ssh ${SERVER_USER}@${SERVER_HOST} sudo ls
         env:
           SERVER_USER : ${{ secrets.SERVERUSER }}
