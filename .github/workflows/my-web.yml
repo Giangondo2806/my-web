@@ -14,3 +14,4 @@ jobs:
           known_hosts: ${{ secrets.KNOW_HOST }}
       - uses: actions/checkout@v3
       - run:  rsync -v -e * ${SERVERUSER}@${SERVER_HOST}:~/my-web
+      - run: ls
