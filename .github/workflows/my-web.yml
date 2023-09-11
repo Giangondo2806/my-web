@@ -18,7 +18,7 @@ jobs:
           SERVER_USER : ${{ secrets.SERVER_USER }}
           SERVER_HOST : ${{ secrets.SERVER_HOST }}
       - run:  | 
-          ssh ${SERVER_USER}@${SERVER_HOST} sudo rm -rf /var/www/html/* && sudo mv  ~/my-web/*  /var/www/html/
+          ssh ${SERVER_USER}@${SERVER_HOST} "sudo rm -rf /var/www/html/* && sudo mv  ~/my-web/*  /var/www/html/"
         env:
           SERVER_USER : ${{ secrets.SERVER_USER }}
           SERVER_HOST : ${{ secrets.SERVER_HOST }}
