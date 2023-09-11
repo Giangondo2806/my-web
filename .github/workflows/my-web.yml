@@ -2,9 +2,9 @@ name: my-web
 on:
   push:
     branches:
-      -main
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -run: echo "hello world"
+      - run: echo "hello world"
