@@ -13,7 +13,7 @@ jobs:
           key: ${{ secrets.KEY }}
           known_hosts: ${{ secrets.KNOW_HOST }}
       - uses: actions/checkout@v3
-      - run: rsync -v -e ./ ${SERVER_USER}@${SERVER_HOST}:~/my-web/
+      - run: rsync -avze ./ ${SERVER_USER}@${SERVER_HOST}:~/my-web/
         env:
           SERVER_USER : ${{ secrets.SERVER_USER }}
           SERVER_HOST : ${{ secrets.SERVER_HOST }}
