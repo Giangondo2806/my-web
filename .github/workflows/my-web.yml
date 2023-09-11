@@ -13,5 +13,5 @@ jobs:
           key: ${{ secrets.KEY }}
           known_hosts: ${{ secrets.KNOW_HOST }}
       - uses: actions/checkout@v3
-      - run: ls ${SERVERUSER}@${SERVER_HOST}:~/
+      - run: ssh ls ${SERVERUSER}@${SERVER_HOST}:~/
       - run: ls
