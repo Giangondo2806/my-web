@@ -13,8 +13,7 @@ jobs:
           key: ${{ secrets.KEY }}
           known_hosts: ${{ secrets.KNOW_HOST }}
       - uses: actions/checkout@v3
-      - run: ssh ${SERVER_USER}@${SERVER_HOST} sudo ls
+      - run: rsync -v -e . ${SERVER_USER}@${SERVER_HOST}:~/my-web/
         env:
           SERVER_USER : ${{ secrets.SERVER_USER }}
           SERVER_HOST : ${{ secrets.SERVER_HOST }}
-      - run: ls
